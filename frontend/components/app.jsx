@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import PlayerContainer from './player/player_container';
 
 const App = ({ children }) => (
   <div>
@@ -18,9 +18,11 @@ const App = ({ children }) => (
         </div>
       </div>
     </div>
+    <PlayerContainer />
     <div className="app-background">
       {children}
     </div>
+
   </div>
 );
 

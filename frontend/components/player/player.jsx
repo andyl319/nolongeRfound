@@ -9,8 +9,9 @@ class Player extends React.Component {
       url: null,
       duration: 0,
       played: 0,
-      playing: this.props.playing
-    }
+      playing: true,
+      albumidx: 0
+    };
 
     this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
     this.onSeekChange = this.onSeekChange.bind(this);
@@ -24,16 +25,16 @@ class Player extends React.Component {
   }
 
   onSeekMouseDown(e) {
-    this.setState({ seeking: true })
+    this.setState({ seeking: true });
   }
 
   onSeekChange(e) {
-    this.setState({ played: parseFloat(e.target.value) })
+    this.setState({ played: parseFloat(e.target.value) });
   }
 
   onSeekMouseUp(e) {
-    this.setState({ seeking: false })
-    this.player.seekTo(parseFloat(e.target.value))
+    this.setState({ seeking: false });
+    this.player.seekTo(parseFloat(e.target.value));
   }
 
   updateProgress(progress) {
@@ -51,11 +52,35 @@ class Player extends React.Component {
   }
 
   handleBack(e) {
-    this.props.playTrack(this.props.playlist[this.props.track.id + 1]);
+    e.preventDefault();
+    let id = this.props.idx;
+    this.setState({albumidx: id}, () =>{
+      if(this.state.albumidx === 0){
+        this.setState({albumidx: this.props.playlist.length-1}, () =>{
+          this.props.playTrack({track: this.props.playlist[this.state.albumidx], playlist: this.props.playlist, idx: this.state.albumidx});
+        });
+      } else {
+        this.setState({albumidx: this.state.albumidx-1}, () =>{
+          this.props.playTrack({track: this.props.playlist[this.state.albumidx], playlist: this.props.playlist, idx: this.state.albumidx});
+        });
+      }
+    });
   }
 
   handleForward(e) {
-    this.props.playTrack(this.props.playlist[this.props.track.id - 1]);
+    e.preventDefault();
+    let id = this.props.idx;
+    this.setState({albumidx: id}, () =>{
+      if(this.state.albumidx === this.props.playlist.length-1){
+        this.setState({albumidx: 0}, () =>{
+          this.props.playTrack({track: this.props.playlist[this.state.albumidx], playlist: this.props.playlist, idx: this.state.albumidx});
+        });
+      } else {
+        this.setState({albumidx: this.state.albumidx+1}, () =>{
+          this.props.playTrack({track: this.props.playlist[this.state.albumidx], playlist: this.props.playlist, idx: this.state.albumidx});
+        });
+      }
+    });
   }
 
   getElapsed() {
@@ -76,14 +101,13 @@ class Player extends React.Component {
   }
 
   render() {
+
     const playPauseImage = this.props.playing ? "url(http://res.cloudinary.com/dsvfpq1b7/image/upload/v1484553465/pause-button_f3qxvk.png)" :
             "url(http://res.cloudinary.com/dsvfpq1b7/image/upload/v1484553465/play-button_rjs5uw.png)";
     const playPauseStyle = {
       backgroundImage: playPauseImage
-    }
-    const playbarDisplayStyle = this.props.track.id ? { display: "block" } : { display: "none" }
-
-
+    };
+    const playbarDisplayStyle = this.props.track.id ? { display: "block" } : { display: "none" };
     // to use built-in track bar, remove hidden and use controls={true}
 
     return (
@@ -118,9 +142,9 @@ class Player extends React.Component {
               onEnded={() => this.setState({ ["playing"]: false })}
               />
           </div>
-          <div>{this.getElapsed()}/{this.getTrackDuration()}</div>
+          <div className="player-track-time">{this.getElapsed()}/{this.getTrackDuration()}</div>
           <div className="current-track-details">
-            <div>{this.props.track.name}</div>
+            <div className="player-track-title">{this.props.track.title}</div>
           </div>
         </div>
       </div>
