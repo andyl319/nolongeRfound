@@ -9,7 +9,7 @@ const App = ({ children }) => (
         <Link to="/" className="logo">SP@CE ELEPHANT</Link>
         <div className="link-container">
           <Link to="/albums" className="header-link">ALBUMS</Link>
-          <Link to="/songs" className="header-link">ALL SONGS</Link>
+          <Link to="/all-tracks" className="header-link">ALL SONGS</Link>
         </div>
       </div>
       <div className="splash-container">

@@ -4,6 +4,7 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import AlbumContainer from './albums/album_container';
 import AlbumShowContainer from './albums/album_show_container';
+import TracksContainer from './tracks/tracks_container';
 
 const Root = ({store}) => {
 
@@ -14,6 +15,7 @@ const Root = ({store}) => {
         <Route path="/" component={ App } >
           <Route path="/albums" component={ AlbumContainer } />
           <Route path="/albums/:albumId" component={ AlbumShowContainer }/>
+          <Route path="/all-tracks" component={ TracksContainer } />
         </Route>
       </Router>
     </Provider>

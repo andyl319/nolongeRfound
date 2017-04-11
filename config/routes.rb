@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :albums, only: [:index, :show] do
-      resources :tracks, only: [:index, :show]
+      resources :tracks, only: [:show]
     end
+    resources :tracks, only: [:index]
   end
 end

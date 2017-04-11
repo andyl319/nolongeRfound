@@ -1,7 +1,6 @@
 class Api::TracksController < ApplicationController
   def index
-    @album = Album.find(params[:album_id])
-    @tracks = @album.tracks
+    @tracks = Track.all
     render :index
   end
 

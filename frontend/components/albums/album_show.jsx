@@ -26,7 +26,7 @@ class AlbumShow extends React.Component {
     if(tracks !== undefined){
       formattedSongs = tracks.map((track, idx) => <AlbumShowTrackItem key={`track${track.id}`} track={track} idx={idx} playTrack={this.handlePlay}/>);
     }
-
+    
     return formattedSongs;
   }
 
