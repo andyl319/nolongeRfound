@@ -1,0 +1,49 @@
+.album-show-container{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+}
+
+.album-show-info-container{
+  display: flex;
+  height: 250px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.album-show-cover-art{
+  display: flex;
+  position: relative;
+  height: 150px;
+  width: 150px;
+  left: calc(50% - 75px);
+}
+
+.album-show-title{
+  display: flex;
+  justify-content: center;
+  letter-spacing: 5px;
+  font-size: 28px;
+}
+
+.album-show-track-item{
+  display: flex;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: black;
+  opacity: .75;
+  border-bottom: solid gray;
+  border-width: thin;
+}
+
+.album-show-track-title{
+  display: flex;
+  position: relative;
+  left: 4%;
+  font-size: 18px;
+  letter-spacing: 2px;
+}

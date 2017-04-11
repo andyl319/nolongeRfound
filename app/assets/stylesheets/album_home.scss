@@ -1,0 +1,52 @@
+.albums-container{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.album-display-list{
+  display: flex;
+  width: 90%;
+  top: 15px;
+  left: 5%;
+
+}
+
+.album-item{
+  display: flex;
+  height: 200px;
+  width: 200px;
+  flex-direction: column;
+  background-color: black;
+}
+.cover-art{
+  display: flex;
+  min-height: 200px;
+  width: 200px;
+}
+
+.album-title{
+  display: flex;
+  position: relative;
+  color: white;
+  text-decoration: none;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  vertical-align: middle;
+  justify-content: center;
+  bottom: 200px;
+  opacity: 0;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.album-item:hover, .cover-art:hover, .album-title:hover{
+  .cover-art{
+    opacity: 0.5;
+  }
+  .album-title{
+    opacity: 1;
+  }
+  cursor: pointer;
+}

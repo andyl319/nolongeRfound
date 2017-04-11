@@ -1,0 +1,64 @@
+
+.header{
+  display: flex;
+  height: 100px;
+  width: 100%;
+  border-bottom: solid gray;
+  border-width: 1px;
+  justify-content: space-between;
+  line-height: 100px;
+  vertical-align: middle;
+}
+
+.logo{
+  display: flex;
+  position: relative;
+  font-size: 34px;
+  letter-spacing: 4px;
+  text-decoration: none;
+  color: white;
+  left: 2%;
+}
+
+.link-container{
+  display: flex;
+  position: relative;
+  right: 2%;
+  width: 30%;
+  justify-content: space-around;
+}
+
+.header-link{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 2px;
+  transition: color 0.7s;
+}
+
+.header-link:hover{
+  color: #00aeff;
+  cursor: pointer;
+}
+
+.splash-container{
+  display: flex;
+  height: 50px;
+  width: 100%;
+  justify-content: center;
+  line-height: 50px;
+  vertical-align: middle;
+  font-size: 22px;
+  letter-spacing: 7px;
+  border-bottom: solid gray;
+  border-width: 1px;
+}
+
+.app-background{
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: url('http://res.cloudinary.com/dfkydaeys/image/upload/v1491861762/rsz_12rsz_space_elephant_kv5lnv.jpg') no-repeat center;
+
+
+}
