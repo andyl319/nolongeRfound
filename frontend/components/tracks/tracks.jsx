@@ -19,7 +19,8 @@ class Tracks extends React.Component {
     let playlist = $.map(this.props.tracks, (value, idx)=>{
       return [value];
     });
-    let track = this.props.tracks[parseInt(e.currentTarget.dataset.id)-1];
+
+    let track = playlist[parseInt(e.currentTarget.dataset.idx)];
     this.props.playTrack({track, playlist: playlist, idx: parseInt(e.currentTarget.dataset.idx)});
   }
 
@@ -28,7 +29,7 @@ class Tracks extends React.Component {
     if(tracks !== undefined){
       formattedSongs = tracks.map((track, idx) => <TrackItem key={`track${track.id}`} track={track} idx={idx} playTrack={this.handlePlay}/>);
     }
-    
+
     return formattedSongs;
   }
 
