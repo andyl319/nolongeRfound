@@ -40,6 +40,12 @@
   border-width: thin;
 }
 
+.album-show-track-item:hover{
+  cursor: pointer;
+  background-color: gray;
+  opacity: .85;
+}
+
 .album-show-track-title{
   display: flex;
   position: relative;
