@@ -14,7 +14,16 @@ const App = ({ children }) => (
       </div>
       <div className="splash-container">
         <div className="splash">
-          THE OFFICIAL SITE OF TEDDY HONTIVEROS
+          THE OFFICIAL SITE OF SP@CE ELEPHANT
+        </div>
+      </div>
+      <div className="navbar-container">
+        <div className="navbar">
+          <div className="nav">TEDDY</div>
+          <div className="nav">MADDOCKS</div>
+          <div className="nav">ANDREW</div>
+          <div className="nav">DEL RO</div>
+          <div className="nav">RJ</div>
         </div>
       </div>
     </div>
