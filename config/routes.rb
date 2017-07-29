@@ -6,5 +6,6 @@ Rails.application.routes.draw do
       resources :tracks, only: [:show]
     end
     resources :tracks, only: [:index]
+    resources :entourage, only: [:index, :show]
   end
 end

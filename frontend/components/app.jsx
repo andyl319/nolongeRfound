@@ -19,11 +19,11 @@ const App = ({ children }) => (
       </div>
       <div className="navbar-container">
         <div className="navbar">
-          <div className="nav">TEDDY</div>
-          <div className="nav">MADDOCKS</div>
-          <div className="nav">ANDREW</div>
-          <div className="nav">DEL RO</div>
-          <div className="nav">RJ</div>
+          <Link to="/entourage/1" className="nav">TEDDY</Link>
+          <Link to="/entourage/2" className="nav">MADDOCKS</Link>
+          <Link to="/entourage/3" className="nav">ANDREW</Link>
+          <Link to="/entourage/4" className="nav">DEL RO</Link>
+          <Link to="/entourage/5" className="nav">RJ</Link>
         </div>
       </div>
     </div>

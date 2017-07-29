@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import AlbumContainer from './albums/album_container';
 import AlbumShowContainer from './albums/album_show_container';
 import TracksContainer from './tracks/tracks_container';
+import EntourageShowContainer from './entourage/entourage_show_container';
 
 const Root = ({store}) => {
 
@@ -16,6 +17,7 @@ const Root = ({store}) => {
           <Route path="/albums" component={ AlbumContainer } />
           <Route path="/albums/:albumId" component={ AlbumShowContainer }/>
           <Route path="/all-tracks" component={ TracksContainer } />
+          <Route path="/entourage/:entourageId" component={ EntourageShowContainer }/>
         </Route>
       </Router>
     </Provider>
